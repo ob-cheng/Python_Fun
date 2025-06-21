@@ -6,11 +6,12 @@ Welcome to **python_fun** – a personal collection of Python mini-projects buil
 
 ## ✨ Projects
 
-- **CedarCypher** – Custom text encryption/decryption tool  
-- **HangmanGame** – Classic word-guessing game in the terminal  
-- **LoveCalculator** – A playful compatibility calculator  
-- **PasswordGenerator** – Create secure, random passwords  
-- **RapidCedarGames** – A bundle of quick interactive Python games  
+- **caesar_cipher.py** – A classic Caesar cipher encoder/decoder  
+- **caesar_cipher_wip.py** – A work-in-progress version exploring extended cipher logic  
+- **hangman_game.py** – A terminal-based word-guessing game  
+- **love_calculator.py** – A playful string-based compatibility calculator  
+- **password_generator.py** – Generates secure random passwords  
+- **rock_paper_scissor_game.py**
 
 ---
 
