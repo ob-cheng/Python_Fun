@@ -33,7 +33,4 @@ python hangman_game.py
 ## 👀 Check Me Out
 
 Want to connect or see more of what I do?
-
 - 🔗 [My LinkedIn](www.linkedin.com/in/tianen-cheng)
-- 
----
