@@ -11,7 +11,7 @@ Welcome to **python_fun** – a personal collection of Python mini-projects buil
 - **hangman_game.py** – A terminal-based word-guessing game  
 - **love_calculator.py** – A playful string-based compatibility calculator  
 - **password_generator.py** – Generates secure random passwords  
-- **rock_paper_scissor_game.py**
+- **rock_paper_scissor_game.py** – A simple command-line game against the computer  
 
 ---
 
