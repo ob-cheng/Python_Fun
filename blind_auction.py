@@ -6,7 +6,7 @@
 # import art
 # print(art.logo)
 
-print('''
+print(r'''
                          ___________
                          \         /
                           )_______(
