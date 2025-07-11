@@ -15,70 +15,85 @@ import random
 
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
-def draw_card():
-    user_cards.append(random.choice(cards))
-    computer_cards.append(random.choice(cards))
+def deal_card():
+    return random.choice(cards)
 
-def check_card():
-    """Return the winner key"""
-    # When user decides not to continue
-    if if_pass == "n":
-        # When computer score is below 17, it needs to draw card until it's above 17
-        while sum(computer_cards) < 17:
-            computer_cards.append(random.choice(cards))
 
-        # Compare who's closer to 21.
-        if 21 - sum(computer_cards) < 21 - sum(user_cards):
-            return "You lose.😭"
-        elif 21 - sum(computer_cards) > 21 - sum(user_cards):
-            return "You win!🥳"
-
-    # When user decides to continue - regular check
-    if sum(user_cards) >21:
-        return "You went over. You lose!🥺"
-    elif sum(computer_cards) >21:
-        return "Opponent went over. You win!😃"
-    elif sum(user_cards) == 21:
-        return "Blackjack! You win!🤑"
-    elif sum(computer_cards) == 21:
-        return "Opponent had blackjack! You lose...☠️"
+def calculate_score(card_list):
+    if sum(card_list) == 21:
+        return 0
+    elif sum(card_list) > 21 and 11 in card_list:
+        card_list.remove(11)
+        card_list.append(1)
+        return sum(card_list)
     else:
-        return f"Your cards: {user_cards}, current score: {sum(user_cards)}\nComputer's first card: {computer_cards[0]}"
+        return sum(card_list)
 
 
-# Check if user wants to start game
-start_game = input("Do you want to play a game of Blackjack? Type 'y' or 'n':").lower()
-# In case of unexpected input
-while start_game != "y" and start_game != "n":
-    start_game = input("Type 'y' or 'n':").lower()
+def compare():
+    if computer_score == user_score:
+        return "It's a draw! 🤝 Nobody wins this round.\n"
+    elif computer_score == 0:
+        return "Dealer hits Blackjack! 🃏💥 Better luck next time.\n"
+    elif user_score == 0:
+        return "Blackjack! 🃏🎉 You hit 21 right away!\n"
+    elif user_score > 21:
+        return "You lose! 💔 The dealer takes this round.\n"
+    elif computer_score > 21:
+        return "You win! 🥳💰 Great job beating the dealer!\n"
+    else:
+        if computer_score > user_score:
+            return "You lose! 💔 The dealer takes this round.\n"
+        else:
+            return "You win! 🥳💰 Great job beating the dealer!\n"
 
-# Start game
-if start_game == "y":
+def notification():
+    print(f"Your cards: {user_card}, current score: {user_score}\n"
+          f"Computer's first card: {computer_card[0]}\n"
+          # f"DEV MODE: {user_card} {computer_card}\n"
+    )
+
+def game_over():
+    print(f"Your final hand: {user_card}, final score: {user_score}\n"
+          f"Computer's final hand: {computer_card}, final score: {computer_score}\n")
+
+continue_game = "y"
+
+while continue_game == "y":
+    print("\n"*100)
     print(art.logo)
-    user_cards = []
-    computer_cards = []
 
-    # Computer and user draw 2 cards to shart the game
-    for drawn in range(2):
-        draw_card()
-        # print(f"Test: user_cards: {user_cards}")
-        # print(f"Test: computer_cards: {computer_cards}")
+    user_card = []
+    computer_card = []
 
-    # Ask if user wants to continue
-    print(f"Your cards: {user_cards}, current score: {sum(user_cards)}\nComputer's first card: {computer_cards[0]}")
-    # In case of unexpected input
-    if_pass = input("Type 'y' to get another card, type 'n' to pass:").lower()
-    while if_pass != 'y' and if_pass != 'n':
-        if_pass = input("Type 'y' or 'n':").lower()
+    for deal in range(2):
+        user_card.append(deal_card())
+        computer_card.append(deal_card())
 
-    while if_pass == "y":
-        draw_card()
-        check_card()
-        print(user_cards, computer_cards)
-        print(check_card())
+    draw_card = "y"
+    while draw_card == "y":
+        user_score = calculate_score(user_card)
+        computer_score = calculate_score(computer_card)
+        notification()
+        if user_score == 0 or computer_score == 0 or user_score > 21 or computer_score > 21:
+            draw_card = "n"
+            game_over()
+            print(compare())
+            continue_game = input("Do you want to restart game? [y/n]").lower()
+            while continue_game != "y" and continue_game != "n":
+                continue_game = input("Do you want to restart game? Please enter y or n. [y/n]").lower()
+        else:
+            draw_card = input("Do you want to draw another card? [y/n]").lower()
+            while draw_card != "y" and draw_card != "n":
+                draw_card = input("Do you want to draw another card? Please enter y or n.[y/n]").lower()
+            if draw_card == "y":
+                user_card.append(deal_card())
+                computer_card.append(deal_card())
+            else:
+                while computer_score < 17:                         
+                    computer_card.append(deal_card())              
+                    computer_score = calculate_score(computer_card)
+                game_over()
+                print(compare())
+                continue_game = input("Do you want to restart game? [y/n]").lower()
 
-        if_pass = input("Type 'y' to get another card, type 'n' to pass:").lower()
-        while if_pass != 'y' and if_pass != 'n':
-            if_pass = input("Type 'y' or 'n':").lower()
-else:
-    print("Alright. Bye!")
