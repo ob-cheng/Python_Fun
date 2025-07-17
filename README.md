@@ -1,37 +1,61 @@
-# 🐍 Python_Fun
+# Python Portfolio: Interactive Games & Tools
 
-Welcome to **python_fun** – a personal collection of Python mini-projects built for fun, learning, and showcasing core programming skills.
+[![Python](https://img.shields.io/badge/python-3.8+-blue)](https://www.python.org/) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
----
+A curated showcase of 10 Python projects demonstrating my skills in game development, automation, and problem-solving. Built as a self-taught developer, these projects highlight core programming concepts through engaging, interactive applications.
 
-## ✨ Projects
+## About
 
-- **caesar_cipher.py** – A classic Caesar cipher encoder/decoder  
-- **caesar_cipher_wip.py** – A work-in-progress version exploring extended cipher logic  
-- **hangman_game.py** – A terminal-based word-guessing game  
-- **love_calculator.py** – A playful string-based compatibility calculator  
-- **password_generator.py** – Generates secure random passwords  
-- **rock_paper_scissor_game.py** – A simple command-line game against the computer  
+This portfolio reflects my journey in mastering Python through practical, creative projects. From classic games like Blackjack and Hangman to utilities like a password generator and Caesar cipher, each script showcases clean code, logical thinking, and user-friendly design. Whether you're a recruiter, collaborator, or curious coder, explore these projects to see my technical growth and passion for programming.
 
----
+## Projects
 
-## 🚀 Run Any Script
+- **Rock Paper Scissors (`rock_paper_scissors.py`)**
+  - **Description**: A console-based game with ASCII art where users compete against the computer.
+  - **Key Features**: Random computer choices, win/loss logic, and user-friendly interface.
+  - **Skills**: Conditional statements, random module, string formatting.
 
-Clone the repo:
-```bash
-git clone https://github.com/ob-cheng/Python_Fun.git
-```
+- **Password Generator (`password_generator.py`)**
+  - **Description**: Creates secure, customizable passwords based on user input.
+  - **Key Features**: Configurable letter, symbol, and number counts with randomization.
+  - **Skills**: List manipulation, loops, random module, input validation.
 
-Run a script (e.g., Hangman):
-```bash
-python hangman_game.py
-```
+- **Number Guessing Game (`number_guess.py`)**
+  - **Description**: Players guess a number between 1 and 100 with easy/hard modes.
+  - **Key Features**: Difficulty-based attempts, input validation, and feedback loop.
+  - **Skills**: Functions, loops, random number generation, state management.
 
-> All scripts are standalone and require only Python 3 – no extra packages needed.
+- **Love Calculator (`love_calculator.py`)**
+  - **Description**: Computes a playful "love score" from two names.
+  - **Key Features**: Letter counting and string concatenation for a fun output.
+  - **Skills**: String manipulation, loops, functions.
 
----
+- **Hangman (`hangman_game.py`)**
+  - **Description**: A word-guessing game with ASCII art stages to save a character.
+  - **Key Features**: Dynamic word display, lives tracking, and letter validation.
+  - **Skills**: List handling, loops, conditional logic, random selection.
 
-## 👀 Check Me Out
+- **Calculator (`calculator.py`)**
+  - **Description**: A console calculator for continuous arithmetic operations.
+  - **Key Features**: Supports addition, subtraction, multiplication, and division.
+  - **Skills**: Dictionaries, function pointers, loops, input handling.
 
-Want to connect or see more of what I do?
-- 🔗 [My LinkedIn](www.linkedin.com/in/tianen-cheng)
+- **Caesar Cipher (`caesar_cipher.py`)**
+  - **Description**: Encrypts/decrypts messages with a user-defined shift.
+  - **Key Features**: Handles non-alphabetic characters and modular arithmetic.
+  - **Skills**: String manipulation, loops, modular arithmetic.
+
+- **Blind Auction (`blind_auction.py`)**
+  - **Description**: Simulates an auction to find the highest bidder.
+  - **Key Features**: Bid tracking and winner determination with dictionary.
+  - **Skills**: Dictionary management, loops, comparison logic.
+
+- **Blackjack (`blackjack.py`)**
+  - **Description**: A card game with standard rules and dynamic ace scoring.
+  - **Key Features**: Random card dealing, score calculation, and win/loss conditions.
+  - **Skills**: List manipulation, conditional logic, game state management.
+
+- **Higher or Lower (`higher_lower.py`)**
+  - **Description**: A game comparing social media follower counts.
+  - **Key Features**: Random selection from data, score tracking, and game loop.
+  - **Skills**: Dictionaries, functions, random selection, user input.
